@@ -23,4 +23,6 @@ angular
 	.controller('TreeBoxCtrl', treeBoxController);
 ```
 ### Use <sup-tree-box> directive inside your template file
+```html
 <sup-tree-box data="treeBoxData" name="'tw1'" value="frm.tw1"></sup-tree-box>
+```
