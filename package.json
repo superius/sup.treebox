@@ -1,0 +1,27 @@
+{
+  "name": "sup.treebox",
+  "version": "0.1.0",
+  "description": "Treebox-select-like angularjs directive",
+  "main": "gulpfile.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/superius/sup.treebox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/superius/sup.treebox/issues"
+  },
+  "homepage": "https://github.com/superius/sup.treebox"
+}
