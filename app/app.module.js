@@ -1,6 +1,7 @@
 angular
 	.module('sup.treebox', [
 		'keyboard',
-		'duScroll'
+		'duScroll',
+		'templates'
 	])
 	.directive('supTreeBox', treeBoxDirective);

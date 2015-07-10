@@ -1,4 +1,5 @@
-function treeBoxDirective($document, $log) {
+angular.module("templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("treebox.html","<div class=\"treebox-widget {{widgetName}}\">\n\n	<div  class=\"treebox-container\" >\n\n		<div ng-click=\"toggleList()\" class=\"input-container\" style=\"width: 100%;\">\n			<a ng-show=\"printItem && !listVisible\" href=\"\" ng-click=\"resetSelection()\">\n				<span class=\"ion-close-circled pull-right\"></span>\n			</a>\n\n			<p ng-keydown=\"openList()\" ng-focus=\"openList()\"\n							name=\"\" id=\"input\" class=\"\" value=\"\"\n							required=\"required\" pattern=\"\" title=\"\">{{printItem.value || \'Choose from list...\'}}\n				<span ng-show=\"!printItem || listVisible\" class=\"ion-arrow-down-b pull-right\"></span>\n\n			</p>\n		</div>\n\n		<div ng-if=\"listVisible\" class=\"{{widgetName}}\">\n\n			<!--Active item: {{selectedItem}}-->\n\n			<input focus-on-condition=\"inputFocus\" ng-keyup=\"showList($event, search)\" ng-model=\"search\" type=\"text\"\n							name=\"\" id=\"input\" class=\"form-control input-sm\">\n\n			<div ng-if=\"!searchVisible\" class=\"{{widgetName}}\">\n				<div ng-if=\"parentType\" class=\"text-center breadcrumb\">\n					<small>\n						<a ng-click=\"showListByParent(null)\" href=\"#\">Home</a>\n						<span ng-repeat=\"item in breadCrumbList\">\n							<span class=\"ion-android-arrow-dropright\"></span>\n							<a ng-click=\"showListByParent(item.id)\" href=\"#\">{{item.value}}</a>\n							<small>{{item.description}}</small>\n						</span>\n					</small>\n				</div>\n\n				<ul class=\"list-unstyled\" class=\"{{widgetName}}\">\n					<li><a class=\"{{widgetName}}\" ng-if=\"parentType\" ng-class=\"{\'selected\': selectedItem == -1}\" ng-click=\"showListByParent(findTypeById(parentType).parent)\" href=\"\">\n						<span class=\"ion-android-arrow-dropleft\"></span> Povratak</a>\n					</li>\n					<li ng-repeat=\"type in typesListed\" class=\"{{widgetName}}\">\n						<a ng-class=\"{\'selected\': selectedItem == $index}\" ng-if=\"type.hasChilds\" ng-click=\"showListByParent(type.id)\" href=\"\">\n							{{type.value}} <span class=\"ion-android-arrow-dropright pull-right\"></span>\n						</a>\n						<a ng-if=\"!type.hasChilds\" ng-class=\"{\'selected\': selectedItem == $index}\" ng-click=\"showListByParent(type.id)\" href=\"\">\n							{{type.value}}\n							<br/><small>{{type.description}}</small>\n						</a>\n					</li>\n				</ul>\n			</div>\n\n			<div ng-if=\"searchVisible\" class=\"{{widgetName}}\">\n\n				<ul class=\"list-unstyled\">\n					<li ng-repeat=\"type in typesListed\">\n						<a ng-class=\"{\'selected\': selectedItem == $index}\" ng-if=\"!type.hasChilds\" ng-click=\"\" href=\"\">{{type.value}}</a>\n					</li>\n				</ul>\n\n			</div>\n		</div>\n\n	</div>\n\n</div>\n");}]);
+function treeBoxDirective($document, $log, $templateCache) {
 
 	return {
 		restrict: 'E',
@@ -7,7 +8,7 @@ function treeBoxDirective($document, $log) {
 			name: '=',
 			value: '='
 		},
-		templateUrl: '../views/treebox.html',
+		templateUrl: 'treebox.html',
 		controller: function ($scope, filterFilter, $document) {
 
 			$scope.types = $scope.data;
@@ -231,6 +232,7 @@ function treeBoxDirective($document, $log) {
 angular
 	.module('sup.treebox', [
 		'keyboard',
-		'duScroll'
+		'duScroll',
+		'templates'
 	])
 	.directive('supTreeBox', treeBoxDirective);

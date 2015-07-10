@@ -1,4 +1,4 @@
-function treeBoxDirective($document, $log) {
+function treeBoxDirective($document, $log, $templateCache) {
 
 	return {
 		restrict: 'E',
@@ -7,7 +7,7 @@ function treeBoxDirective($document, $log) {
 			name: '=',
 			value: '='
 		},
-		templateUrl: '../views/treebox.html',
+		templateUrl: 'treebox.html',
 		controller: function ($scope, filterFilter, $document) {
 
 			$scope.types = $scope.data;
