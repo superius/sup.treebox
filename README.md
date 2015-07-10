@@ -1,7 +1,7 @@
 # sup.treebox
 Treebox-select-like angularjs directive
 
-# Requirements
+## Requirements
 
 - [AngularJS](http://angularjs.org/)
 
