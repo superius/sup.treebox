@@ -38,7 +38,6 @@ function treeBoxController($scope, $rootScope, $http, $log, $window) {
 		];
 
 		$scope.frm = {};
-
 		$scope.frm.tw1 = 15;
 
 }
