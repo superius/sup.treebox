@@ -1,0 +1,21 @@
+{
+    "name": "angular-keyboard",
+    "authors": [
+        "Bob Fanger <bfanger@gmail.com>"
+    ],
+    "description": "Keyboard behavior for AngularJS Webapps",
+    "main": "keyboard.min.js",
+    "keywords": [
+        "keyboard",
+        "navigation",
+        "scroll",
+        "listview",
+        "focus",
+        "angularjs"
+    ],
+    "license": "MIT",
+    "ignore": ["bower_components"],
+    "dependencies": {
+        "angular": "~1.*"
+    }
+}

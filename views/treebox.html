@@ -1,0 +1,66 @@
+<div class="treebox-widget {{widgetName}}">
+
+	<div  class="treebox-container" >
+
+		<div ng-click="toggleList()" class="input-container" style="width: 100%;">
+			<a ng-show="printItem && !listVisible" href="" ng-click="resetSelection()">
+				<span class="ion-close-circled pull-right"></span>
+			</a>
+
+			<p ng-keydown="openList()" ng-focus="openList()"
+							name="" id="input" class="" value=""
+							required="required" pattern="" title="">{{printItem.value || 'Choose from list...'}}
+				<span ng-show="!printItem || listVisible" class="ion-arrow-down-b pull-right"></span>
+
+			</p>
+		</div>
+
+		<div ng-if="listVisible" class="{{widgetName}}">
+
+			<!--Active item: {{selectedItem}}-->
+
+			<input focus-on-condition="inputFocus" ng-keyup="showList($event, search)" ng-model="search" type="text"
+							name="" id="input" class="form-control input-sm">
+
+			<div ng-if="!searchVisible" class="{{widgetName}}">
+				<div ng-if="parentType" class="text-center breadcrumb">
+					<small>
+						<a ng-click="showListByParent(null)" href="#">Home</a>
+						<span ng-repeat="item in breadCrumbList">
+							<span class="ion-android-arrow-dropright"></span>
+							<a ng-click="showListByParent(item.id)" href="#">{{item.value}}</a>
+							<small>{{item.description}}</small>
+						</span>
+					</small>
+				</div>
+
+				<ul class="list-unstyled" class="{{widgetName}}">
+					<li><a class="{{widgetName}}" ng-if="parentType" ng-class="{'selected': selectedItem == -1}" ng-click="showListByParent(findTypeById(parentType).parent)" href="">
+						<span class="ion-android-arrow-dropleft"></span> Povratak</a>
+					</li>
+					<li ng-repeat="type in typesListed" class="{{widgetName}}">
+						<a ng-class="{'selected': selectedItem == $index}" ng-if="type.hasChilds" ng-click="showListByParent(type.id)" href="">
+							{{type.value}} <span class="ion-android-arrow-dropright pull-right"></span>
+						</a>
+						<a ng-if="!type.hasChilds" ng-class="{'selected': selectedItem == $index}" ng-click="showListByParent(type.id)" href="">
+							{{type.value}}
+							<br/><small>{{type.description}}</small>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div ng-if="searchVisible" class="{{widgetName}}">
+
+				<ul class="list-unstyled">
+					<li ng-repeat="type in typesListed">
+						<a ng-class="{'selected': selectedItem == $index}" ng-if="!type.hasChilds" ng-click="" href="">{{type.value}}</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+	</div>
+
+</div>

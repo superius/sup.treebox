@@ -1,0 +1,25 @@
+{
+  "name": "sup.treebox",
+  "version": "0.1",
+  "authors": [
+    "Danijel Maric <danijel.maric@gmail.com>"
+  ],
+  "description": "Superius treebox widget",
+  "main": "app/main.js",
+  "license": "MIT",
+  "homepage": "http://superius.co",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.*",
+    "angular-keyboard": "~0.3.1",
+    "angular-click-outside": "~1.1.0",
+    "angular-scroll": "~0.7.1",
+    "jquery": "~2.1.4"
+  }
+}

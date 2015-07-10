@@ -1,0 +1,34 @@
+{
+  "name": "angular-keyboard",
+  "authors": [
+    "Bob Fanger <bfanger@gmail.com>"
+  ],
+  "description": "Keyboard behavior for AngularJS Webapps",
+  "main": "keyboard.min.js",
+  "keywords": [
+    "keyboard",
+    "navigation",
+    "scroll",
+    "listview",
+    "focus",
+    "angularjs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.*"
+  },
+  "homepage": "https://github.com/bfanger/bower-angular-keyboard",
+  "version": "0.3.1",
+  "_release": "0.3.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.1",
+    "commit": "8e164a3ea7f6b07f02af2c4c60b189ad8ee96b50"
+  },
+  "_source": "git://github.com/bfanger/bower-angular-keyboard.git",
+  "_target": "~0.3.1",
+  "_originalSource": "angular-keyboard"
+}

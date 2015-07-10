@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Treebox example</title>
+
+		<!-- Bootstrap CSS -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+		<link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+		<link href="../css/style.css" rel="stylesheet">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body ng-app="sup.treebox" ng-controller="TreeBoxCtrl">
+		<h1 class="text-center">Sup treebox example</h1>
+
+		<div class="" style="width: 400px; margin:0 auto;">
+
+			<sup-tree-box data="treeBoxData" name="'tw1'" value="frm.tw1"></sup-tree-box>
+
+			<br/>
+			Value: {{frm.tw1}}
+
+			<br/><br/>
+
+			<sup-tree-box data="treeBoxData" name="'tw2'" value="frm.tw2"></sup-tree-box>
+			<br/>
+			Value: {{frm.tw2}}
+
+		</div>
+
+		<!-- jQuery -->
+		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+
+		<script src="../bower_components/angular-keyboard/keyboard.min.js"></script>
+		<script src="../bower_components/angular-scroll/angular-scroll.min.js"></script>
+		<script src="../app/clickoutside.directive.js"></script>
+		<script type="text/javascript" src="../app/treebox.directive.js"></script>
+		<script type="text/javascript" src="../app/app.module.js"></script>
+	</body>
+</html>
