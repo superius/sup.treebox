@@ -7,39 +7,23 @@ angular
 
 function treeBoxController($scope, $rootScope, $http, $log, $window) {
 
-		/* Example data */
-		$scope.treeBoxData = [
+    /* Example data */
+    $scope.treeBoxData = [
 
-		{id: 1, value: "Trošak", hasChilds: true},
-		{id: 4, value: "Imovina", hasChilds: true},
+        {id: 1, value: "Cars", hasChilds: true},
+        {id: 4, value: "Boat", hasChilds: false},
 
-		/* Trošak */
-		{id: 5, value: "Reprezentacija", parent: 1},
-		{id: 6, value: "Ured", parent: 1, hasChilds: true},
-		{id: 7, value: "Potrošni materijal",
-				description: "Npr. uredski papir, kemijske, markeri...",
-				parent: 6},
-		{id: 8, value: "Reprezentacija", parent: 6},
-		{id: 9, value: "Režije", parent: 1, hasChilds: true},
-		{id: 10, value: "Namještaj", parent: 6},
-		{id: 11, value: "Namještaj", parent: 6},
-		{id: 12, value: "Namještaj", parent: 6},
-		{id: 13, value: "Namještaj", parent: 6},
-		{id: 14, value: "Namještaj", parent: 6},
+        {id: 15, value: "Audi", parent: 1, hasChilds: true},
+        {id: 16, value: "BMW", parent: 1, hasChilds: false},
+        {id: 17, value: "Mercedes", parent: 1, hasChilds: false},
 
-		/* Imovina */
-		{id: 15, value: "Auto", parent: 4, hasChilds: false},
+        {id: 21, value: "A3", parent: 15, hasChilds: false},
+        {id: 22, value: "A6", parent: 15, hasChilds: false},
+        {id: 23, value: "R8", parent: 15, hasChilds: false},
 
-		/* Režije */
-		{id: 91, value: "Struja", parent: 9},
-		{id: 92, value: "Voda", parent: 9},
-		{id: 93, value: "Komunalne usluge", parent: 9},
+    ];
 
-		];
-
-		$scope.frm = {};
-		$scope.frm.tw1 = 15;
+    $scope.frm = {};
+    $scope.frm.tw1 = 15; // selected item
 
 }
-
-
