@@ -11,6 +11,7 @@ angular
 
 function treeBoxController($scope, $rootScope, $http, $log, $window) {
 
+        /* Example data */
 		$scope.treeBoxData = [
 
 		{id: 1, value: "Trošak", hasChilds: true},
