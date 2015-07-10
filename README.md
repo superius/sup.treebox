@@ -21,6 +21,23 @@ angular
 		'sup.treebox'
 	])
 	.controller('TreeBoxCtrl', treeBoxController);
+	
+function treeBoxController($scope, $rootScope, $http, $log, $window) {
+	/* Example data */
+	$scope.treeBoxData = [
+
+		{id: 1, value: "Group A", hasChilds: true},
+		{id: 4, value: "Group B", hasChilds: true},
+
+		{id: 15, value: "Child 1", parent: 4, hasChilds: false}
+
+	];
+	
+	$scope.frm = {};
+	$scope.frm.tw1 = 15; // selected item
+
+}
+	
 ```
 ### Use <sup-tree-box> directive inside your template file
 ```html
