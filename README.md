@@ -15,6 +15,7 @@ Treebox-select-like angularjs directive
 
 ### Include it in your project
 ```
+<link href="bower_components/sup.treebox/css/style.css" rel="stylesheet">
 <script type="text/javascript" src="bower_components/sup.treebox/dist/sup.treebox.js"></script>
 ```
 ### Require 'sup.treebox' inside your angular module
