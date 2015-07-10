@@ -1,6 +1,9 @@
 # sup.treebox
 Treebox-select-like angularjs directive
 
+![alt text](https://github.com/superius/sup.treebox/blob/master/example/treebox.png "Logo Title Text 1")
+
+
 ## Requirements
 
 - [AngularJS](http://angularjs.org/)
