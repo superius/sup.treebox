@@ -19,9 +19,12 @@ gulp.task('build', function() {
 		.pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('default', ['views', 'build']);
 
-/*gulp.task('watch', function() {
-	gulp.watch(paths.css, ['less', 'minify-css']);
-	gulp.watch(paths.icons, ['iconfont']);
-});*/
+var paths = {
+  js: ['./public/templates.js', './app/treebox.directive.js', './app/app.module.js']
+};
+gulp.task('watch', function() {
+  gulp.watch(paths.js, ['views', 'build']);
+});
+
+gulp.task('default', ['views', 'build']);

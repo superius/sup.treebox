@@ -32,7 +32,9 @@ function treeBoxDirective($document, $log, $templateCache) {
 
 			$scope.openList = function() {
 				$scope.savedItem = null;
-				$scope.savedItem = $scope.findTypeById($scope.value);
+				if ($scope.value && $scope.value.id) {
+					$scope.savedItem = $scope.findTypeById($scope.value.id);
+				}
 				$scope.listVisible = true;
 				$scope.inputFocus = true;
 			}
@@ -51,7 +53,7 @@ function treeBoxDirective($document, $log, $templateCache) {
 				$scope.listVisible = false;
 				$scope.printItem = $scope.savedItem;
 				if ($scope.savedItem && $scope.savedItem.id) {
-					$scope.value = $scope.savedItem.id;
+					$scope.value = $scope.savedItem;
 				}
 				//}
 			}
@@ -217,9 +219,9 @@ function treeBoxDirective($document, $log, $templateCache) {
 
 			/* Initi */
 			$scope.showListByParent();
-			if ($scope.value) {
-				$scope.printItem = $scope.findTypeById($scope.value);
-				$scope.savedItem = $scope.findTypeById($scope.value);
+			if ($scope.value && $scope.value.id) {
+				$scope.printItem = $scope.findTypeById($scope.value.id);
+				$scope.savedItem = $scope.findTypeById($scope.value.id);
 			}
 
 

@@ -24,6 +24,6 @@ function treeBoxController($scope, $rootScope, $http, $log, $window) {
     ];
 
     $scope.frm = {};
-    $scope.frm.tw1 = 15; // selected item
+    $scope.frm.tw1 = {id: 15}; // selected item
 
 }
