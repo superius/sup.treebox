@@ -13,6 +13,7 @@ gulp.task('views', function () {
 
 gulp.task('build', function() {
 	return gulp.src(['./public/templates.js',
+					'./app/jqueryScrollTo.min.js', 
 					'./app/treebox.directive.js', 
 					 './app/app.module.js'])
 		.pipe(concat('sup.treebox.js'))

@@ -7,6 +7,7 @@ Sup.treebox is an advanced dropdown control for choosing data from a hierarchica
 ## Requirements
 
 - [AngularJS](http://angularjs.org/)
+- [jQuery](http://jquery.com/)
 
 ## Setup
 
@@ -17,8 +18,6 @@ Sup.treebox is an advanced dropdown control for choosing data from a hierarchica
 ```
 <link href="bower_components/sup.treebox/css/style.css" rel="stylesheet">
 
-<script src="bower_components/angular-keyboard/keyboard.min.js"></script>
-<script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
 <script type="text/javascript" src="bower_components/sup.treebox/dist/sup.treebox.js"></script>
 ```
 ### Require 'sup.treebox' inside your angular module
