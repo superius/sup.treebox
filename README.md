@@ -1,5 +1,5 @@
 # sup.treebox
-Sup.treebox is an advanced dropdown control for choosing data from a hierarchical composition (e.g. choosing a car groped by make and model), together with navigation and search functionality.
+Sup.treebox is an advanced dropdown control for choosing data from a hierarchical composition (e.g. choosing a car grouped by make and model), together with navigation and search functionality.
 
 ![alt text](https://github.com/superius/sup.treebox/blob/master/example/treebox.png "Logo Title Text 1")
 
