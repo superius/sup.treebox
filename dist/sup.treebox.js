@@ -149,15 +149,7 @@ function treeBoxDirective($document, $log, $templateCache) {
 				}
 
 				setTimeout(function(){ 
-					/*var someElement = document.getElementsByClassName('selected');
-					if (someElement.length) {
-						$scope.$apply(); 
-						if (document.getElementsByClassName('list-unstyled')) {
-							angular.element(document.getElementsByClassName('list-unstyled')).scrollToElement(someElement, 0);
-						}
-					}*/
 					angular.element("." + $scope.widgetName +  " .list-unstyled").scrollTo('.selected');
-
 				});
 			}
 
