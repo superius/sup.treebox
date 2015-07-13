@@ -31,6 +31,12 @@ function treeBoxDirective($document, $log, $templateCache) {
 			});
 
 			$scope.openList = function() {
+				
+				setTimeout(function(){ 
+					$("." + $scope.widgetName +  " .search-input").focus();
+					//$log.debug($(".search-input"));
+				});
+
 				$scope.savedItem = null;
 				if ($scope.value && $scope.value.id) {
 					$scope.savedItem = $scope.findTypeById($scope.value.id);
@@ -61,6 +67,8 @@ function treeBoxDirective($document, $log, $templateCache) {
 			$scope.resetSelection = function() {
 				$scope.printItem = null;
 				$scope.search = null;
+				$scope.savedItem = {};
+				$scope.value = {};
 				$scope.showListByParent();
 				$scope.openList();
 			}
@@ -70,7 +78,6 @@ function treeBoxDirective($document, $log, $templateCache) {
 				$scope.isFocused = true;
 				$scope.search = inputValue;
 
-				$log.debug(event);
 				if (event.keyCode == 8) { //backspacekey
 
 					if (!inputValue || inputValue === '') {
@@ -133,14 +140,24 @@ function treeBoxDirective($document, $log, $templateCache) {
 
 				}
 
-				var someElement = document.getElementsByClassName('selected');
-				angular.element(document.getElementsByClassName('list-unstyled')).scrollToElementAnimated(someElement, 20);
+				setTimeout(function(){ 
+					var someElement = document.getElementsByClassName('selected');
+					if (someElement.length) {
+						$scope.$apply(); 
+						if (document.getElementsByClassName('list-unstyled')) {
+							angular.element(document.getElementsByClassName('list-unstyled')).scrollToElement(someElement, 0);
+						}
+					}
+
+				});
+			
 
 				//console.log("T", $scope.searchVisible);
 			}
 
+
 			$scope.hoverItem = function() {
-				console.log('test');
+				$log.debug('test');
 			}
 
 			$scope.toggleSubmenu = function() {

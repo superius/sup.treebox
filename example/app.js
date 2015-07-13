@@ -11,7 +11,12 @@ function treeBoxController($scope, $rootScope, $http, $log, $window) {
     $scope.treeBoxData = [
 
         {id: 1, value: "Cars", hasChilds: true},
-        {id: 4, value: "Boat", hasChilds: false},
+        {id: 4, value: "Boat1", hasChilds: false},
+        {id: 4, value: "Boat2", hasChilds: false},
+        {id: 4, value: "Boat3", hasChilds: false},
+        {id: 4, value: "Boat4", hasChilds: false},
+        {id: 4, value: "Boat5", hasChilds: false},
+        {id: 4, value: "Boat6", hasChilds: false},
 
         {id: 15, value: "Audi", parent: 1, hasChilds: true},
         {id: 16, value: "BMW", parent: 1, hasChilds: false},

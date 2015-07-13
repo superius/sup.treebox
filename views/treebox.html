@@ -17,10 +17,12 @@
 
 		<div ng-if="listVisible" class="{{widgetName}}">
 
-			<!--Active item: {{selectedItem}}-->
 
-			<input focus-on-condition="inputFocus" ng-keyup="showList($event, search)" ng-model="search" type="text"
-							name="" id="input" class="form-control input-sm">
+			Active item: {{selectedItem}}
+
+
+			<input ng-keyup="showList($event, search)" ng-model="search" type="text"
+							name="" id="input" class="form-control search-input input-sm">
 
 			<div ng-if="!searchVisible" class="{{widgetName}}">
 				<div ng-if="parentType" class="text-center breadcrumb">
@@ -35,14 +37,14 @@
 				</div>
 
 				<ul class="list-unstyled" class="{{widgetName}}">
-					<li><a class="{{widgetName}}" ng-if="parentType" ng-class="{'selected': selectedItem == -1}" ng-click="showListByParent(findTypeById(parentType).parent)" href="">
+					<li><a class="{{widgetName}} itm_{{$index}}" ng-if="parentType" ng-class="{'selected': selectedItem == -1}" ng-click="showListByParent(findTypeById(parentType).parent)" href="">
 						<span class="ion-android-arrow-dropleft"></span> Povratak</a>
 					</li>
 					<li ng-repeat="type in typesListed" class="{{widgetName}}">
-						<a ng-class="{'selected': selectedItem == $index}" ng-if="type.hasChilds" ng-click="showListByParent(type.id)" href="">
+						<a class="itm_{{$index}}" ng-class="{'selected': selectedItem == $index}" ng-if="type.hasChilds" ng-click="showListByParent(type.id)" href="">
 							{{type.value}} <span class="ion-android-arrow-dropright pull-right"></span>
 						</a>
-						<a ng-if="!type.hasChilds" ng-class="{'selected': selectedItem == $index}" ng-click="showListByParent(type.id)" href="">
+						<a class="itm_{{$index}}" ng-if="!type.hasChilds" ng-class="{'selected': selectedItem == $index}" ng-click="showListByParent(type.id)" href="">
 							{{type.value}}
 							<br/><small>{{type.description}}</small>
 						</a>
