@@ -72,6 +72,15 @@ function treeBoxDirective($document, $log, $templateCache) {
 				//}
 			}
 
+			$scope.$watch('value', function(newValue, oldValue) {
+				$scope.printItem = {};
+				$scope.savedItem = {};
+				if ($scope.value && $scope.value.id) {
+					$scope.printItem = $scope.findTypeById($scope.value.id);
+					$scope.savedItem = $scope.findTypeById($scope.value.id);
+				}
+			});
+
 			$scope.resetSelection = function() {
 				$scope.printItem = null;
 				$scope.search = null;
