@@ -3,14 +3,14 @@
 	<div  class="treebox-container" >
 
 		<div ng-click="toggleList()" class="input-container" style="width: 100%;">
-			<a ng-show="printItem && !listVisible" href="" ng-click="resetSelection()">
+			<a ng-show="printItem.id && !listVisible" href="" ng-click="resetSelection()">
 				<span class="ion-close-circled pull-right"></span>
 			</a>
 
 			<p ng-keydown="openList()" ng-focus="openList()"
 							name="" id="input" class="" value=""
 							required="required" pattern="" title="">{{printItem.value || 'Choose from list...'}}
-				<span ng-show="!printItem || listVisible" class="ion-arrow-down-b pull-right"></span>
+				<span ng-show="!printItem.id || listVisible" class="ion-arrow-down-b pull-right"></span>
 
 			</p>
 		</div>
