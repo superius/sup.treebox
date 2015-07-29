@@ -250,7 +250,7 @@ function treeBoxDirective($document, $log, $templateCache) {
 					$scope.savedItem = $scope.findTypeById($scope.value.id);
 				}
 
-			}
+			});
 
 
 		}
