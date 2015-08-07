@@ -243,7 +243,33 @@ function treeBoxDirective($document, $log, $templateCache) {
 					}
 				}
 
-				/* Initi */
+				$scope.autoAddHasChildsAttribute = function(){
+
+					//check if data is array and is not empty
+					if(!$scope.types || !angular.isArray($scope.types) || $scope.types.length == 0)
+						return false
+
+					//check if first elemnt is object and if allready has "hasChilds" parameter
+					else if(!angular.isObject($scope.types[0]) || $scope.types[0].hasOwnProperty("hasChilds"))
+						return false
+
+					//first pass to extract parents
+					var parents = []
+					angular.forEach($scope.types, function(item, i) {
+						if(item.parent && parents.indexOf(item.parent) < 0){
+							parents.push(item.parent);
+						}
+					})
+
+					//second pass: add hasChilds param
+					angular.forEach($scope.types, function(item, i) {
+						item.hasChilds  = item.id && parents.indexOf(item.id)>-1 ? true : false;
+						$scope.types[i] = item;
+					})
+				}
+
+				/* Init */
+				$scope.autoAddHasChildsAttribute()
 				$scope.showListByParent();
 				if ($scope.value && $scope.value.id) {
 					$scope.printItem = $scope.findTypeById($scope.value.id);
@@ -251,11 +277,8 @@ function treeBoxDirective($document, $log, $templateCache) {
 				}
 
 			});
-
-
 		}
 	}
-
 };
 
 angular
